@@ -6,17 +6,17 @@ export default function App() {
     const [data, setData] = useState<any[]>([]);
     //Fetches data on a load
     useEffect(() => {
-        fetch("https://randomuser.me/api/?results=50")
+        fetch("http://localhost:8000/user/view_all")
             .then((response) => response.json())
-            .then((data) => setData(data.results))
+            .then((data) => setData(data))
             .catch((error) => console.log("Error ", error));
     }, []);
     return (
         <div className="wrapper">
             {data.map((user, index) => (
                 <div key={index} className="card">
-                    <img src={user.picture.large} alt="" />
-                    <div className="name">{`${user.name.title} ${user.name.first} ${user.name.last}`}</div>
+                    {/* <img src={user.picture.large} alt="" /> */}
+                    <div className="name">{`Username:${user.name} Description${user.description} Age:${user.age}`}</div>
                 </div>
             ))}
         </div>

@@ -8,10 +8,13 @@ import isEmail from 'validator/lib/isEmail';
 const Auth: NextPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [token, setToken] = useState();
 
     const createUser = () => {
 
     }
+
+    
 
     return (
         <div>
