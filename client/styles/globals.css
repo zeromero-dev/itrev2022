@@ -6,8 +6,11 @@ html,
 body {
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #4e566d;
 }
 
 a {
@@ -31,6 +34,37 @@ a {
   background: #edeff1;
   padding: 5px;
 }
+card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ card:hover {
+  color: #fff;
+ }
+ 
+ card:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ card:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ card:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+ }
+
+
 img {
   width: 200px;
   height: 200px;

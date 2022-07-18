@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useRouter } from "next/router"
 import isEmail from 'validator/lib/isEmail';
 
 
@@ -10,11 +11,9 @@ const Auth: NextPage = () => {
     const [password, setPassword] = useState("")
     const [token, setToken] = useState();
 
-    const createUser = () => {
+    const router = useRouter()
 
-    }
 
-    
 
     return (
         <div>
@@ -38,7 +37,7 @@ const Auth: NextPage = () => {
                                 <a href="#" className="text-xs text-gray-600 hover:underline">Forget Password?</a>
                                 {/* Change the <a> tag to the link */}
                                 <div>
-                                    <button type="submit" onClick={logInUser()} className="block w-full px-4 py-2 mt-4 text-white bg-purple-600 border border-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-purple-300 focus:ring focus:ring-opacity-40">
+                                    <button type="submit" className="block w-full px-4 py-2 mt-4 text-white bg-purple-600 border border-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-purple-300 focus:ring focus:ring-opacity-40">
                                         Log In
                                     </button>
                                 </div>
@@ -46,7 +45,7 @@ const Auth: NextPage = () => {
                         </div>
                     </form>
                     <p className="mt-8 text-xs font-light text-center text-gray-700"> Don't have an account?
-                        <button onClick={createUser()} className="font-medium text-purple-600 hover:underline"> Sign up</button>
+                        <button className="font-medium text-purple-600 hover:underline"> Sign up</button>
                     </p>
                 </div>
             </div>
